@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\HttpContoller;
 use App\Http\Middleware\AgeCheck;
 use App\Http\Middleware\CountryCheck;
 
@@ -29,8 +31,14 @@ Route::view('/userform', 'input-form')->middleware([CountryCheck::class,AgeCheck
     Route::controller(UserController::class )->group(function () {
         Route::post("/user-details", "userForm2");
         Route::post("/form", "userForm");
+        Route::get("/db","retrievingData");
     });
 
+    Route::get("/http",[HttpContoller::class,'index']);
+
+    Route::controller(\App\Http\Controllers\QueryBuilder::class)->group(function () {
+        Route::get("/query", "index");
+    });
 
 });
 
