@@ -56,4 +56,7 @@ Route::view("upload","uploadFile");
 Route::post("addfile",[UploadController::class,'upload']);
 
 Route::view("employee","employeeAdd");
-Route::post("employeeAdd",[EmployeeController::class,'employee']);
+Route::post("employee",[EmployeeController::class,'employee']);
+
+Route::get("employeeList",[EmployeeController::class,'employeeList']);
+Route::get("delete/{id}",[EmployeeController::class,'deleteEmployee']);

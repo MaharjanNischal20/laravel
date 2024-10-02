@@ -1,7 +1,7 @@
 <div>
     <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
     <h1>Employee</h1>
-    <form action="employeeAdd" method="post">
+    <form action="employee" method="post">
         @csrf
         <input type="text" name="name" placeholder="Enter Employee Name">
         <br><br>
