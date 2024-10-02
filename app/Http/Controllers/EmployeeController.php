@@ -25,7 +25,7 @@ class EmployeeController extends Controller
     }
 
     function employeeList(){
-            $data=Employee::all();
+            $data=Employee::paginate(1);
             return view('employeeList',['data'=>$data]);
     }
         function deleteEmployee($id)

@@ -30,5 +30,11 @@
             </tr>
         @endforeach
     </table>
+    {{$data->links()}}
     <!-- Very little is needed to make a happy life. - Marcus Aurelius -->
 </div>
+<style>
+    .w-5.h-5{
+        width: 20px;
+    }
+</style>
