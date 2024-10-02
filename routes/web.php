@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
@@ -50,3 +51,5 @@ Route::view("/profile","profileView");
 Route::post("login",[LoginController::class,'login']);
 Route::get("logout",[LoginController::class,'logout']);
 
+Route::view("upload","uploadFile");
+Route::post("addfile",[UploadController::class,'upload']);
