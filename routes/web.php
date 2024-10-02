@@ -62,3 +62,5 @@ Route::get("employeeList",[EmployeeController::class,'employeeList']);
 Route::get("delete/{id}",[EmployeeController::class,'deleteEmployee']);
 Route::get("edit/{id}",[EmployeeController::class,'editEmployee']);
 Route::put("edit-employee/{id}",[EmployeeController::class,'updateEmployee']);
+
+Route::get("search",[EmployeeController::class,'search']);

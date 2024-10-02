@@ -1,4 +1,10 @@
 <div>
+    <h1>Employee Table</h1>
+    <form action="search" method="get">
+        <input type="text" name="search" placeholder="Search here" value="{{@$search}}">
+{{--        @ means yedi search ma value xa bhane value ma data basyo natra basena--}}
+        <button type="submit">Search</button>
+    </form>
     <table border="1">
         <tr>
             <td>ID</td>

@@ -56,6 +56,10 @@ class EmployeeController extends Controller
             return "Not Updated";
         }
     }
+    function search(Request $request){
+        $searchData = Employee::where("name","like","%$request->search%")->get();
+        return view('employeeList',["data"=>$searchData,'search'=>$request->search]);
+    }
 }
 
 
