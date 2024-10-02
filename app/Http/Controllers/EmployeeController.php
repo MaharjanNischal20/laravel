@@ -38,5 +38,24 @@ class EmployeeController extends Controller
                 return "Not Deleted";
             }
         }
+    function editEmployee($id)
+    {
+        $data = Employee::find($id);
+        return view('editEmployee',['data'=>$data]);
+    }
+    function updateEmployee(Request $request,$id){
+        $employee = Employee::find($id);
+        $employee->name = $request->name;
+        $employee->email = $request->email;
+        $employee->age = $request->age;
+        $employee->phone = $request->number;
+        $employee->save();
+        if($employee){
+            return redirect('employeeList');
+        }else{
+            return "Not Updated";
+        }
+    }
 }
+
 
