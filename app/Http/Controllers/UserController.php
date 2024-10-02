@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -53,5 +54,33 @@ class UserController extends Controller
     {
         $users = DB::select('select * from users');
         return view("user",["users"=>$users]);
+    }
+
+    function modelQueryBuilder(){
+        $results = User::all();
+//        $results = User::get();
+//        $results = User::insert(["name"=>"Nikesh","email"=>"nikesh@test.com","password"=>"12345"]);
+//        if($results){
+//            echo "Data inserted successfully";
+//
+//        }else{
+//            echo "Data not inserted";
+//        }
+//        $results = User::where("name","Nikesh")->update(["email"=>"Nikesh@gmail.com"]);
+//        if($results){
+//            echo "Data updated successfully";
+//
+//        }else{
+//            echo "Data not updated";
+//        }
+//        $results = User::where("name","Nikesh")->delete();
+//        if($results){
+//            echo "Data deleted successfully";
+//
+//        }else{
+//            echo "Data not deleted";
+//        }
+//        $results = User::first();
+        return view("modelQueryBuilder",["users"=>$results]);
     }
 }
